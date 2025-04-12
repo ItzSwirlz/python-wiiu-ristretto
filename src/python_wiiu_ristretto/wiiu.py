@@ -11,7 +11,7 @@ class WiiU:
 
 
     def get_device_hardware_version(self) -> WiiUHardwareVersion:
-        return WiiUHardwareVersion(requests.get(self._base_url  + 'device/hardware_version').text)
+        return WiiUHardwareVersion(int(requests.get(self._base_url  + 'device/hardware_version').text))
 
     def get_device_model_number(self) -> str:
         return requests.get(self._base_url + 'device/model_number').text
