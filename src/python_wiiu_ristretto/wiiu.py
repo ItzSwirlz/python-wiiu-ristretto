@@ -355,12 +355,12 @@ class WiiU:
 
     def get_current_title_name(self) -> str:
         """Get the name of the currently running title."""
-        response_text, _ = self.send_http_request('GET', 'title/name')
+        response_text, _ = self.send_http_request('GET', 'title/current')
         return response_text
 
     async def async_get_current_title_name(self) -> str:
         """Get the name of the currently running title asynchronously."""
-        response_text, _ = await self.async_send_http_request('GET', 'title/name')
+        response_text, _ = await self.async_send_http_request('GET', 'title/current')
         return response_text
 
     def get_title_list(self):
